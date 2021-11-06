@@ -10,4 +10,4 @@ Ho Chi Minh City University of Technology - Database Systems Lab (C02014) - Assi
 - Create a new database `qcd`.
 - Import data from `camp-main\sql\qcd.sql`.
 - Connect to [Quaratine Camp Database](http://localhost/camp/).
-- Login with account username = `admin` and password = `123456`.
+- Login with username = `admin` and password = `123456`.
