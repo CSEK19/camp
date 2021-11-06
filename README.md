@@ -2,6 +2,7 @@
 Ho Chi Minh City University of Technology - Database Systems Lab (C02014) - Assignment 2
 
 ## Instruction
+- Download and install XAMPP.
 - Download and extract the source code.
 - Place `camp`  folder into `...\xampp\htdocs`.
 - Start `Apache` and `MySQL` in XAMPP Control Panel.
