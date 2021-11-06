@@ -1,3 +1,3 @@
 # Assignment 2 -  Quaratine Camp Database
-Database Systems Lab (C02014)
+Ho Chi Minh City University of Technology - Database Systems Lab (C02014)
 
