@@ -3,4 +3,4 @@ Ho Chi Minh City University of Technology - Database Systems Lab (C02014) - Assi
 
 ## Installation
 - Download the source code.
-- Place 'camp' folder to .../xampp/htdocs
+- Place `camp`  folder to `...\xampp\htdocs`.
