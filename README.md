@@ -12,4 +12,4 @@
 - Create a new database `qcd`.
 - Import data from `camp-main\sql\qcd.sql`.
 - Connect to [Quaratine Camp Database](http://localhost/camp/).
-- Login with username = `admin` and password = `123456`.
+- Login with username `admin` and password `123456`.
