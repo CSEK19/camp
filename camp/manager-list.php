@@ -37,7 +37,7 @@ check_login();
 <section id="page-title">
 <div class="row">
 <div class="col-sm-8">
-<h1 class="mainTitle">Manager | View Volunteer List</h1>
+<h1 class="mainTitle">Manager | View Manager List</h1>
 </div>
 <ol class="breadcrumb">
 <li>

@@ -90,7 +90,7 @@ Medical Record</b></td></tr>
     <tr>
     <th>Patient ID</th>
     <td><?php  echo $row['ID_no'];?></td>
-    <th>Discharge ID</th>
+    <th>Discharge Date</th>
     <td><?php  echo $row['Discharge_date'];?></td>
   </tr>
   <tr>
