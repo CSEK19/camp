@@ -175,6 +175,7 @@ CREATE TABLE PATIENT_TEST_RESULTS (
 );
 
 -- SELECT DATE_FORMAT(column_name, '%Y/%m/%d') FROM tablename
+ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD';
 
 INSERT INTO PERSON VALUES('NUR001', '24 Le Loi Str, HCM City'             , 'Nguyen Van A'     , 'F', '0945519390');
 INSERT INTO PERSON VALUES('NUR002', '69 Nguyen Binh Khiem Str, HCM City'  , 'Thay Giao Ba'     , 'M', '0838963738');
