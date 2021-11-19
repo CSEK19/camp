@@ -403,3 +403,43 @@ INSERT INTO PATIENT_TEST_RESULTS VALUES ('PAT009', 50.78, 21, 'F', NULL, 'F', NU
 INSERT INTO PATIENT_TEST_RESULTS VALUES ('PAT010', 96.34, 21, 'T', 33  , 'T', 34  , 'F');
 INSERT INTO PATIENT_TEST_RESULTS VALUES ('PAT011', 89.78, 22, 'F', NULL, 'F', NULL, 'F');
 INSERT INTO PATIENT_TEST_RESULTS VALUES ('PAT012', 90.69, 22, 'T', 30,   'T', 30,   'T');
+
+-- Function / Procedure
+UPDATE PATIENT_TEST_RESULTS
+SET PCR_test = 'T',
+    PCR_ct_value =  NULL
+WHERE EXISTS (SELECT Admission_date FROM PATIENT WHERE Admission_date >= '1-9-2020')
+;
+
+SELECT *
+FROM PATIENT
+WHERE Patient_name = 'Nguyen Van A'
+;
+
+CREATE OR REPLACE FUNCTION get_detail_patient
+(Patient_ID in PATIENT_TEST_RESULTS.Patient_no%TYPE)
+RETURN SYS_REFCURSOR
+AS
+   o_cursor   SYS_REFCURSOR;
+BEGIN
+    OPEN o_cursor FOR
+        SELECT *
+        FROM PATIENT_TEST_RESULTS
+        WHERE PATIENT_TEST_RESULTS.Patient_no = Patient_ID;
+    RETURN o_cursor;
+END 
+;
+
+CREATE OR REPLACE PROCEDURE sort_nurse_desc
+(start_date IN DATE, end_date IN DATE, cursorParam OUT SYS_REFCURSOR)
+IS
+BEGIN
+    OPEN cursorParam FOR
+        SELECT Nurse_ID AS Nurse, COUNT(Patient_no) AS Num_patient
+        FROM PATIENT
+        WHERE Admission_date >= start_date AND (Discharge_date <= end_date OR Discharge_date IS NULL)
+        GROUP BY Nurse_ID
+        ORDER BY COUNT(Patient_no) DESC;
+END 
+;
+
