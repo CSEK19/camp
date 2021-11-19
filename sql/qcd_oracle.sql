@@ -408,7 +408,8 @@ INSERT INTO PATIENT_TEST_RESULTS VALUES ('PAT012', 90.69, 22, 'T', 30,   'T', 30
 UPDATE PATIENT_TEST_RESULTS
 SET PCR_test = 'T',
     PCR_ct_value =  NULL
-WHERE EXISTS (SELECT Admission_date FROM PATIENT WHERE Admission_date >= '1-9-2020')
+-- WHERE EXISTS (SELECT Admission_date FROM PATIENT WHERE Admission_date >= '1-9-2020')
+WHERE EXISTS(SELECT Admission_date FROM PATIENTWHERE Admission_date >= '2020-9-1')
 ;
 
 SELECT *
@@ -430,6 +431,9 @@ BEGIN
 END 
 ;
 
+SELECT get_detail_patient('PAT001')FROM DUAL;
+
+
 CREATE OR REPLACE PROCEDURE sort_nurse_desc
 (start_date IN DATE, end_date IN DATE, cursorParam OUT SYS_REFCURSOR)
 IS
@@ -442,4 +446,8 @@ BEGIN
         ORDER BY COUNT(Patient_no) DESC;
 END 
 ;
+
+var c refcursor;
+execute sort_nurse_desc('2020-1-1','2022-1-1',:c)
+print c;
 
