@@ -409,7 +409,7 @@ UPDATE PATIENT_TEST_RESULTS
 SET PCR_test = 'T',
     PCR_ct_value =  NULL
 -- WHERE EXISTS (SELECT Admission_date FROM PATIENT WHERE Admission_date >= '1-9-2020')
-WHERE EXISTS(SELECT Admission_date FROM PATIENTWHERE Admission_date >= '2020-9-1')
+WHERE EXISTS(SELECT Admission_date FROM PATIENT WHERE Admission_date >= '2020-9-1')
 ;
 
 SELECT *
